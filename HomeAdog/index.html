@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeAdog · Find your forever friend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+  <div class="paws" id="paws" aria-hidden="true"></div>
+
+  <main class="login-wrap">
+    <section class="hero">
+      <img id="heroDog" class="hero-dog" alt="A happy dog" src="" />
+      <h1 class="logo">Home<span>A</span>dog</h1>
+      <p>Every dog deserves a sofa. Sign in and meet the ones waiting for you.</p>
+      <button class="btn ghost" id="newDog" type="button">Show me another dog</button>
+    </section>
+
+    <form class="card" id="authForm" novalidate>
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab active" data-mode="signup" role="tab">Sign up</button>
+        <button type="button" class="tab" data-mode="login" role="tab">Log in</button>
+      </div>
+
+      <label id="nameRow">Your name
+        <input id="name" type="text" autocomplete="name" placeholder="Sam Rivera">
+      </label>
+      <label>Email
+        <input id="email" type="email" autocomplete="email" placeholder="sam@example.com" required>
+      </label>
+      <label>Password
+        <input id="password" type="password" autocomplete="current-password" placeholder="At least 6 characters" required>
+      </label>
+
+      <p class="error" id="error" role="alert"></p>
+      <button class="btn" id="submitBtn" type="submit">Create my account</button>
+    </form>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>

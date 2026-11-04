@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeAdog · Meet the dogs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <header class="topbar">
+    <a class="logo small" href="home.html">Home<span>A</span>dog</a>
+    <div class="who">
+      <span id="hello">Hi!</span>
+      <button class="btn ghost" id="logout" type="button">Log out</button>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2>Hi <span id="userName">friend</span>, these pups want to meet you.</h2>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search by name or breed…" aria-label="Search dogs">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="small">Small</button>
+      <button class="chip" data-filter="big">Big</button>
+      <button class="chip" data-filter="fav">♥ Favourites</button>
+      <button class="chip" data-filter="adopted">🏠 My dogs</button>
+    </div>
+  </section>
+
+  <main class="grid" id="grid"></main>
+
+  <!-- AI chatbot -->
+  <button class="bot-fab" id="botFab" aria-label="Chat with Barkley">🐶</button>
+  <aside class="bot" id="bot" hidden>
+    <header><b>Barkley</b> · your adoption guide <button id="botClose" aria-label="Close chat">×</button></header>
+    <div class="msgs" id="msgs"></div>
+    <form id="botForm">
+      <input id="botInput" placeholder="Ask about breeds, care, adoption…" autocomplete="off">
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </aside>
+
+  <script src="js/dogs.js"></script>
+  <script src="js/bot.js"></script>
+</body>
+</html>

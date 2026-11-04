@@ -1,0 +1,9 @@
+services:
+  homeadog:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      # Put your key in a .env file next to this one: ANTHROPIC_API_KEY=sk-ant-...
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    restart: unless-stopped

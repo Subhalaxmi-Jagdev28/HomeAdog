@@ -1,0 +1,18 @@
+server {
+  listen 80;
+  root /usr/share/nginx/html;
+  index index.html;
+
+  # The browser never sees the API key: nginx adds it server-side.
+  location = /api/chat {
+    proxy_pass https://api.anthropic.com/v1/messages;
+    proxy_ssl_server_name on;
+    proxy_set_header Host api.anthropic.com;
+    proxy_set_header x-api-key "${ANTHROPIC_API_KEY}";
+    proxy_set_header anthropic-version "2023-06-01";
+    proxy_set_header Content-Type "application/json";
+    proxy_set_header Origin "";
+  }
+
+  location / { try_files $uri $uri/ =404; }
+}
